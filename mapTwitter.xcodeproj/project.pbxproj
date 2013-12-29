@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8AA4F7D61870CC26009150EE /* searchMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4F7D51870CC26009150EE /* searchMapVC.m */; };
+		8AA4F7D81870CD95009150EE /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7D71870CD95009150EE /* GoogleMaps.framework */; };
+		8AA4F7DA1870CDF2009150EE /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8AA4F7D91870CDF2009150EE /* GoogleMaps.bundle */; };
+		8AA4F7DC1870CE62009150EE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7DB1870CE62009150EE /* AVFoundation.framework */; };
+		8AA4F7DE1870CE69009150EE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7DD1870CE69009150EE /* CoreData.framework */; };
+		8AA4F7E01870CE77009150EE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7DF1870CE77009150EE /* CoreLocation.framework */; };
+		8AA4F7E21870CE86009150EE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7E11870CE86009150EE /* CoreText.framework */; };
+		8AA4F7E41870CE91009150EE /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7E31870CE91009150EE /* GLKit.framework */; };
+		8AA4F7E61870CE9D009150EE /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7E51870CE9D009150EE /* ImageIO.framework */; };
+		8AA4F7E81870CEAD009150EE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7E71870CEAD009150EE /* libc++.dylib */; };
+		8AA4F7EA1870CEC4009150EE /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7E91870CEC4009150EE /* libicucore.dylib */; };
+		8AA4F7EC1870CED7009150EE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7EB1870CED7009150EE /* libz.dylib */; };
+		8AA4F7EE1870CEE3009150EE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7ED1870CEE3009150EE /* OpenGLES.framework */; };
+		8AA4F7F01870CEEE009150EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7EF1870CEEE009150EE /* QuartzCore.framework */; };
+		8AA4F7F21870CEFB009150EE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7F11870CEFB009150EE /* SystemConfiguration.framework */; };
 		8ABF7FF3186F8A04005160B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABF7FF2186F8A04005160B8 /* Foundation.framework */; };
 		8ABF7FF5186F8A04005160B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABF7FF4186F8A04005160B8 /* CoreGraphics.framework */; };
 		8ABF7FF7186F8A04005160B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABF7FF6186F8A04005160B8 /* UIKit.framework */; };
@@ -19,6 +34,9 @@
 		8ABF800E186F8A05005160B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABF7FF6186F8A04005160B8 /* UIKit.framework */; };
 		8ABF8016186F8A05005160B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ABF8014186F8A05005160B8 /* InfoPlist.strings */; };
 		8ABF8018186F8A05005160B8 /* mapTwitterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABF8017186F8A05005160B8 /* mapTwitterTests.m */; };
+		8ABF8024186F9135005160B8 /* SearchHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABF8023186F9135005160B8 /* SearchHistoryVC.m */; };
+		8ABF8028186F92F2005160B8 /* MTStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABF8027186F92F2005160B8 /* MTStyles.m */; };
+		8ABF806B186FBA65005160B8 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ABF806A186FBA64005160B8 /* OpenSans-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +50,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8AA4F7D41870CC26009150EE /* searchMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchMapVC.h; sourceTree = "<group>"; };
+		8AA4F7D51870CC26009150EE /* searchMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchMapVC.m; sourceTree = "<group>"; };
+		8AA4F7D71870CD95009150EE /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		8AA4F7D91870CDF2009150EE /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		8AA4F7DB1870CE62009150EE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8AA4F7DD1870CE69009150EE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8AA4F7DF1870CE77009150EE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8AA4F7E11870CE86009150EE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		8AA4F7E31870CE91009150EE /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		8AA4F7E51870CE9D009150EE /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		8AA4F7E71870CEAD009150EE /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		8AA4F7E91870CEC4009150EE /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		8AA4F7EB1870CED7009150EE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		8AA4F7ED1870CEE3009150EE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8AA4F7EF1870CEEE009150EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8AA4F7F11870CEFB009150EE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8AA4F7F31870CFB1009150EE /* MTGoogleMapAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGoogleMapAPIKey.h; sourceTree = "<group>"; };
 		8ABF7FEF186F8A04005160B8 /* mapTwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapTwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ABF7FF2186F8A04005160B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8ABF7FF4186F8A04005160B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +83,11 @@
 		8ABF8013186F8A05005160B8 /* mapTwitterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mapTwitterTests-Info.plist"; sourceTree = "<group>"; };
 		8ABF8015186F8A05005160B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8ABF8017186F8A05005160B8 /* mapTwitterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mapTwitterTests.m; sourceTree = "<group>"; };
+		8ABF8022186F9135005160B8 /* SearchHistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchHistoryVC.h; sourceTree = "<group>"; };
+		8ABF8023186F9135005160B8 /* SearchHistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchHistoryVC.m; sourceTree = "<group>"; };
+		8ABF8026186F92F2005160B8 /* MTStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTStyles.h; sourceTree = "<group>"; };
+		8ABF8027186F92F2005160B8 /* MTStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTStyles.m; sourceTree = "<group>"; };
+		8ABF806A186FBA64005160B8 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +95,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA4F7F21870CEFB009150EE /* SystemConfiguration.framework in Frameworks */,
+				8AA4F7F01870CEEE009150EE /* QuartzCore.framework in Frameworks */,
+				8AA4F7EE1870CEE3009150EE /* OpenGLES.framework in Frameworks */,
+				8AA4F7EC1870CED7009150EE /* libz.dylib in Frameworks */,
+				8AA4F7EA1870CEC4009150EE /* libicucore.dylib in Frameworks */,
+				8AA4F7E81870CEAD009150EE /* libc++.dylib in Frameworks */,
+				8AA4F7E61870CE9D009150EE /* ImageIO.framework in Frameworks */,
+				8AA4F7E41870CE91009150EE /* GLKit.framework in Frameworks */,
+				8AA4F7E21870CE86009150EE /* CoreText.framework in Frameworks */,
+				8AA4F7E01870CE77009150EE /* CoreLocation.framework in Frameworks */,
+				8AA4F7DE1870CE69009150EE /* CoreData.framework in Frameworks */,
+				8AA4F7DC1870CE62009150EE /* AVFoundation.framework in Frameworks */,
 				8ABF7FF5186F8A04005160B8 /* CoreGraphics.framework in Frameworks */,
 				8ABF7FF7186F8A04005160B8 /* UIKit.framework in Frameworks */,
+				8AA4F7D81870CD95009150EE /* GoogleMaps.framework in Frameworks */,
 				8ABF7FF3186F8A04005160B8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +127,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8AA4F7D21870CBEB009150EE /* SearchHistory */ = {
+			isa = PBXGroup;
+			children = (
+				8ABF8022186F9135005160B8 /* SearchHistoryVC.h */,
+				8ABF8023186F9135005160B8 /* SearchHistoryVC.m */,
+			);
+			name = SearchHistory;
+			sourceTree = "<group>";
+		};
+		8AA4F7D31870CBFE009150EE /* SearchMap */ = {
+			isa = PBXGroup;
+			children = (
+				8AA4F7D41870CC26009150EE /* searchMapVC.h */,
+				8AA4F7D51870CC26009150EE /* searchMapVC.m */,
+			);
+			name = SearchMap;
+			sourceTree = "<group>";
+		};
 		8ABF7FE6186F8A04005160B8 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +167,20 @@
 		8ABF7FF1186F8A04005160B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AA4F7F11870CEFB009150EE /* SystemConfiguration.framework */,
+				8AA4F7EF1870CEEE009150EE /* QuartzCore.framework */,
+				8AA4F7ED1870CEE3009150EE /* OpenGLES.framework */,
+				8AA4F7EB1870CED7009150EE /* libz.dylib */,
+				8AA4F7E91870CEC4009150EE /* libicucore.dylib */,
+				8AA4F7E71870CEAD009150EE /* libc++.dylib */,
+				8AA4F7E51870CE9D009150EE /* ImageIO.framework */,
+				8AA4F7E31870CE91009150EE /* GLKit.framework */,
+				8AA4F7E11870CE86009150EE /* CoreText.framework */,
+				8AA4F7DF1870CE77009150EE /* CoreLocation.framework */,
+				8AA4F7DD1870CE69009150EE /* CoreData.framework */,
+				8AA4F7DB1870CE62009150EE /* AVFoundation.framework */,
+				8AA4F7D91870CDF2009150EE /* GoogleMaps.bundle */,
+				8AA4F7D71870CD95009150EE /* GoogleMaps.framework */,
 				8ABF7FF2186F8A04005160B8 /* Foundation.framework */,
 				8ABF7FF4186F8A04005160B8 /* CoreGraphics.framework */,
 				8ABF7FF6186F8A04005160B8 /* UIKit.framework */,
@@ -107,6 +192,9 @@
 		8ABF7FF8186F8A04005160B8 /* mapTwitter */ = {
 			isa = PBXGroup;
 			children = (
+				8ABF8025186F92B4005160B8 /* Utilities */,
+				8ABF8021186F90E3005160B8 /* view controller */,
+				8AA4F7F31870CFB1009150EE /* MTGoogleMapAPIKey.h */,
 				8ABF8001186F8A04005160B8 /* UWBEAppDelegate.h */,
 				8ABF8002186F8A04005160B8 /* UWBEAppDelegate.m */,
 				8ABF8004186F8A05005160B8 /* Images.xcassets */,
@@ -120,6 +208,7 @@
 			children = (
 				8ABF7FFA186F8A04005160B8 /* mapTwitter-Info.plist */,
 				8ABF7FFB186F8A04005160B8 /* InfoPlist.strings */,
+				8ABF806A186FBA64005160B8 /* OpenSans-Bold.ttf */,
 				8ABF7FFE186F8A04005160B8 /* main.m */,
 				8ABF8000186F8A04005160B8 /* mapTwitter-Prefix.pch */,
 			);
@@ -142,6 +231,24 @@
 				8ABF8014186F8A05005160B8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8ABF8021186F90E3005160B8 /* view controller */ = {
+			isa = PBXGroup;
+			children = (
+				8AA4F7D31870CBFE009150EE /* SearchMap */,
+				8AA4F7D21870CBEB009150EE /* SearchHistory */,
+			);
+			name = "view controller";
+			sourceTree = "<group>";
+		};
+		8ABF8025186F92B4005160B8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8ABF8026186F92F2005160B8 /* MTStyles.h */,
+				8ABF8027186F92F2005160B8 /* MTStyles.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +329,8 @@
 			files = (
 				8ABF7FFD186F8A04005160B8 /* InfoPlist.strings in Resources */,
 				8ABF8005186F8A05005160B8 /* Images.xcassets in Resources */,
+				8ABF806B186FBA65005160B8 /* OpenSans-Bold.ttf in Resources */,
+				8AA4F7DA1870CDF2009150EE /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +350,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ABF7FFF186F8A04005160B8 /* main.m in Sources */,
+				8ABF8024186F9135005160B8 /* SearchHistoryVC.m in Sources */,
+				8ABF8028186F92F2005160B8 /* MTStyles.m in Sources */,
+				8AA4F7D61870CC26009150EE /* searchMapVC.m in Sources */,
 				8ABF8003186F8A04005160B8 /* UWBEAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +430,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -350,6 +463,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -360,6 +474,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/haochonglei/Desktop/mapTwitter,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mapTwitter/mapTwitter-Prefix.pch";
 				INFOPLIST_FILE = "mapTwitter/mapTwitter-Info.plist";
@@ -373,6 +491,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/haochonglei/Desktop/mapTwitter,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mapTwitter/mapTwitter-Prefix.pch";
 				INFOPLIST_FILE = "mapTwitter/mapTwitter-Info.plist";
@@ -442,6 +564,7 @@
 				8ABF801D186F8A05005160B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8ABF801E186F8A05005160B8 /* Build configuration list for PBXNativeTarget "mapTwitterTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +573,7 @@
 				8ABF8020186F8A05005160B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,15 +7,31 @@
 //
 
 #import "UWBEAppDelegate.h"
+#import "SearchHistoryVC.h"
+#import "MTGoogleMapAPIKey.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation UWBEAppDelegate
 
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [self customizeAppearance];
+    return YES;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    CGRect bounds = [[UIScreen mainScreen] bounds];
+    self.window = [[UIWindow alloc] initWithFrame:bounds];
+
     self.window.backgroundColor = [UIColor whiteColor];
+    SearchHistoryVC *searchHVC = [[SearchHistoryVC alloc] init];
+    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:searchHVC];
+    nv.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    self.window.rootViewController = nv;
     [self.window makeKeyAndVisible];
+    
+    [GMSServices provideAPIKey:KAPIKey];
     return YES;
 }
 
@@ -44,6 +60,17 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Custom Methods
+
+- (void)customizeAppearance
+{
+    self.window.tintColor = [MTStyles newKidOnTheBlockBlue];
+    [[UINavigationBar appearance] setBarTintColor:[MTStyles newKidOnTheBlockBlue]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:16.0]}];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 @end
