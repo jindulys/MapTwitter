@@ -19,6 +19,9 @@
 		8ABF800E186F8A05005160B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABF7FF6186F8A04005160B8 /* UIKit.framework */; };
 		8ABF8016186F8A05005160B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ABF8014186F8A05005160B8 /* InfoPlist.strings */; };
 		8ABF8018186F8A05005160B8 /* mapTwitterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABF8017186F8A05005160B8 /* mapTwitterTests.m */; };
+		8ABF8024186F9135005160B8 /* SearchHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABF8023186F9135005160B8 /* SearchHistoryVC.m */; };
+		8ABF8028186F92F2005160B8 /* MTStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABF8027186F92F2005160B8 /* MTStyles.m */; };
+		8ABF806B186FBA65005160B8 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ABF806A186FBA64005160B8 /* OpenSans-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,11 @@
 		8ABF8013186F8A05005160B8 /* mapTwitterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mapTwitterTests-Info.plist"; sourceTree = "<group>"; };
 		8ABF8015186F8A05005160B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8ABF8017186F8A05005160B8 /* mapTwitterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mapTwitterTests.m; sourceTree = "<group>"; };
+		8ABF8022186F9135005160B8 /* SearchHistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchHistoryVC.h; sourceTree = "<group>"; };
+		8ABF8023186F9135005160B8 /* SearchHistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchHistoryVC.m; sourceTree = "<group>"; };
+		8ABF8026186F92F2005160B8 /* MTStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTStyles.h; sourceTree = "<group>"; };
+		8ABF8027186F92F2005160B8 /* MTStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTStyles.m; sourceTree = "<group>"; };
+		8ABF806A186FBA64005160B8 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,8 @@
 		8ABF7FF8186F8A04005160B8 /* mapTwitter */ = {
 			isa = PBXGroup;
 			children = (
+				8ABF8025186F92B4005160B8 /* Utilities */,
+				8ABF8021186F90E3005160B8 /* view controller */,
 				8ABF8001186F8A04005160B8 /* UWBEAppDelegate.h */,
 				8ABF8002186F8A04005160B8 /* UWBEAppDelegate.m */,
 				8ABF8004186F8A05005160B8 /* Images.xcassets */,
@@ -120,6 +130,7 @@
 			children = (
 				8ABF7FFA186F8A04005160B8 /* mapTwitter-Info.plist */,
 				8ABF7FFB186F8A04005160B8 /* InfoPlist.strings */,
+				8ABF806A186FBA64005160B8 /* OpenSans-Bold.ttf */,
 				8ABF7FFE186F8A04005160B8 /* main.m */,
 				8ABF8000186F8A04005160B8 /* mapTwitter-Prefix.pch */,
 			);
@@ -142,6 +153,24 @@
 				8ABF8014186F8A05005160B8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8ABF8021186F90E3005160B8 /* view controller */ = {
+			isa = PBXGroup;
+			children = (
+				8ABF8022186F9135005160B8 /* SearchHistoryVC.h */,
+				8ABF8023186F9135005160B8 /* SearchHistoryVC.m */,
+			);
+			name = "view controller";
+			sourceTree = "<group>";
+		};
+		8ABF8025186F92B4005160B8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8ABF8026186F92F2005160B8 /* MTStyles.h */,
+				8ABF8027186F92F2005160B8 /* MTStyles.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +251,7 @@
 			files = (
 				8ABF7FFD186F8A04005160B8 /* InfoPlist.strings in Resources */,
 				8ABF8005186F8A05005160B8 /* Images.xcassets in Resources */,
+				8ABF806B186FBA65005160B8 /* OpenSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ABF7FFF186F8A04005160B8 /* main.m in Sources */,
+				8ABF8024186F9135005160B8 /* SearchHistoryVC.m in Sources */,
+				8ABF8028186F92F2005160B8 /* MTStyles.m in Sources */,
 				8ABF8003186F8A04005160B8 /* UWBEAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +474,7 @@
 				8ABF801D186F8A05005160B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8ABF801E186F8A05005160B8 /* Build configuration list for PBXNativeTarget "mapTwitterTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +483,7 @@
 				8ABF8020186F8A05005160B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
