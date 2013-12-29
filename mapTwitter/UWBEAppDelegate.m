@@ -8,6 +8,8 @@
 
 #import "UWBEAppDelegate.h"
 #import "SearchHistoryVC.h"
+#import "MTGoogleMapAPIKey.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation UWBEAppDelegate
 
@@ -28,6 +30,8 @@
     nv.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     self.window.rootViewController = nv;
     [self.window makeKeyAndVisible];
+    
+    [GMSServices provideAPIKey:KAPIKey];
     return YES;
 }
 
