@@ -22,6 +22,10 @@
 		8AA4F7EE1870CEE3009150EE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7ED1870CEE3009150EE /* OpenGLES.framework */; };
 		8AA4F7F01870CEEE009150EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7EF1870CEEE009150EE /* QuartzCore.framework */; };
 		8AA4F7F21870CEFB009150EE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F7F11870CEFB009150EE /* SystemConfiguration.framework */; };
+		8AA4F7F91870D799009150EE /* icon-reader-topics-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA4F7F51870D799009150EE /* icon-reader-topics-active.png */; };
+		8AA4F7FA1870D799009150EE /* icon-reader-topics-active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA4F7F61870D799009150EE /* icon-reader-topics-active@2x.png */; };
+		8AA4F7FB1870D799009150EE /* icon-reader-topics.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA4F7F71870D799009150EE /* icon-reader-topics.png */; };
+		8AA4F7FC1870D799009150EE /* icon-reader-topics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA4F7F81870D799009150EE /* icon-reader-topics@2x.png */; };
 		8ABF7FF3186F8A04005160B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABF7FF2186F8A04005160B8 /* Foundation.framework */; };
 		8ABF7FF5186F8A04005160B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABF7FF4186F8A04005160B8 /* CoreGraphics.framework */; };
 		8ABF7FF7186F8A04005160B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABF7FF6186F8A04005160B8 /* UIKit.framework */; };
@@ -67,6 +71,10 @@
 		8AA4F7EF1870CEEE009150EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8AA4F7F11870CEFB009150EE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8AA4F7F31870CFB1009150EE /* MTGoogleMapAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGoogleMapAPIKey.h; sourceTree = "<group>"; };
+		8AA4F7F51870D799009150EE /* icon-reader-topics-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-reader-topics-active.png"; sourceTree = "<group>"; };
+		8AA4F7F61870D799009150EE /* icon-reader-topics-active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-reader-topics-active@2x.png"; sourceTree = "<group>"; };
+		8AA4F7F71870D799009150EE /* icon-reader-topics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-reader-topics.png"; sourceTree = "<group>"; };
+		8AA4F7F81870D799009150EE /* icon-reader-topics@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-reader-topics@2x.png"; sourceTree = "<group>"; };
 		8ABF7FEF186F8A04005160B8 /* mapTwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapTwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ABF7FF2186F8A04005160B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8ABF7FF4186F8A04005160B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +153,17 @@
 			name = SearchMap;
 			sourceTree = "<group>";
 		};
+		8AA4F7F41870D731009150EE /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				8AA4F7F51870D799009150EE /* icon-reader-topics-active.png */,
+				8AA4F7F61870D799009150EE /* icon-reader-topics-active@2x.png */,
+				8AA4F7F71870D799009150EE /* icon-reader-topics.png */,
+				8AA4F7F81870D799009150EE /* icon-reader-topics@2x.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
 		8ABF7FE6186F8A04005160B8 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +211,7 @@
 		8ABF7FF8186F8A04005160B8 /* mapTwitter */ = {
 			isa = PBXGroup;
 			children = (
+				8AA4F7F41870D731009150EE /* Image */,
 				8ABF8025186F92B4005160B8 /* Utilities */,
 				8ABF8021186F90E3005160B8 /* view controller */,
 				8AA4F7F31870CFB1009150EE /* MTGoogleMapAPIKey.h */,
@@ -327,10 +347,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA4F7FA1870D799009150EE /* icon-reader-topics-active@2x.png in Resources */,
 				8ABF7FFD186F8A04005160B8 /* InfoPlist.strings in Resources */,
 				8ABF8005186F8A05005160B8 /* Images.xcassets in Resources */,
 				8ABF806B186FBA65005160B8 /* OpenSans-Bold.ttf in Resources */,
 				8AA4F7DA1870CDF2009150EE /* GoogleMaps.bundle in Resources */,
+				8AA4F7FB1870D799009150EE /* icon-reader-topics.png in Resources */,
+				8AA4F7FC1870D799009150EE /* icon-reader-topics@2x.png in Resources */,
+				8AA4F7F91870D799009150EE /* icon-reader-topics-active.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
