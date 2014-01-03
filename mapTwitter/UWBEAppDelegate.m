@@ -10,8 +10,13 @@
 #import "SearchHistoryVC.h"
 #import "MTGoogleMapAPIKey.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "TwitterAPI.h"
 
 @implementation UWBEAppDelegate
+
++ (instancetype)sharedDelegate {
+    return [UIApplication sharedApplication].delegate;
+}
 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -32,6 +37,9 @@
     [self.window makeKeyAndVisible];
     
     [GMSServices provideAPIKey:KAPIKey];
+    if (!_twitterAPI) {
+        self.twitterAPI;
+    }
     return YES;
 }
 
@@ -71,6 +79,15 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:16.0]}];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
+@synthesize twitterAPI = _twitterAPI;
+
+- (TwitterAPI *)twitterAPI {
+    if (_twitterAPI == nil) {
+        _twitterAPI = [TwitterAPI Twitter];
+    }
+    return _twitterAPI;
 }
 
 @end

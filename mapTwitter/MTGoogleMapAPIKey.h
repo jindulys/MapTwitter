@@ -11,4 +11,8 @@
 
 static NSString *const KAPIKey = @"AIzaSyB_uyiiG3Di1Vc3RRf3q_q6A2yJXrBVEMo";
 
+static NSString *const ConsumerKey = @"e3KchU8XQGwSC2rlfFKiA";
+static NSString *const ConsumerSecret = @"ukuKpYZQZI8r1lMnuBvhMXmlmEtyWPJkqTZFB3E";
+
+
 #endif
