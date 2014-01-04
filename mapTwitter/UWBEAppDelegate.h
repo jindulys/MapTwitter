@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class TwitterAPI;
+
 @interface UWBEAppDelegate : UIResponder <UIApplicationDelegate>
 
++ (instancetype)sharedDelegate;
+
 @property (strong, nonatomic) UIWindow *window;
+@property (readonly, strong, nonatomic) TwitterAPI *twitterAPI;
 
 @end
