@@ -38,6 +38,10 @@ configuerCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock {
     return self.items[(NSInteger) indexPath.row];
 }
 
+- (NSInteger)itemCount {
+    return self.items.count;
+}
+
 # pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -46,9 +50,6 @@ configuerCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
-    if (!cell) {
-        cell =[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:self.cellIdentifier];
-    }
     id item = [self itemAtIndexPath:indexPath];
     self.configureCellBlock(cell, item);
     return cell;

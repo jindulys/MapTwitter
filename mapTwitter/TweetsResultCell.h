@@ -6,13 +6,12 @@
 //  Copyright (c) 2014年 Liyansong. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "YSMTCell.h"
 
-@interface TweetsResultCell : UITableViewCell
+#define SMALL_TRENDSTIMELINECEELL_CONTENT_WITH (320-50-90)
+#define LARGE_TRENDSTIMELINECEELL_CONTENT_WITH (320-50-10)
 
-@property (strong, nonatomic) UILabel *userNameLabel;
-@property (strong, nonatomic) UILabel *discriptionLabel;
+@interface TweetsResultCell : YSMTCell
 
-- (void)configureWithData:(id)data;
 
 @end

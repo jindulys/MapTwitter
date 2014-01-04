@@ -18,4 +18,6 @@ configuerCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock;
 
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath;
 
+- (NSInteger)itemCount;
+
 @end

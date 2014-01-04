@@ -11,6 +11,13 @@
 #import "ArrayDataSource.h"
 #import "TwitterAPI.h"
 #import "TweetsResultCell.h"
+#import "Tweet.h"
+#import "UIFont+Additions.h"
+#import "NSString+Additions.h"
+
+
+#define TableViewCellAdjustBottomHeight (12 + 5 + 8)
+#define DEFAULT_CELL_HEIGHT 44
 
 static NSString *const TweetsCellIdentifier = @"TweetCell";
 
@@ -49,27 +56,49 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)generateModelData:(NSArray *)array {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSMutableArray *resultsArray = [[NSMutableArray alloc] init];
+        for (NSDictionary *dic in array) {
+            NSDictionary *userdic = dic[@"user"];
+            Tweet *tweet = [[Tweet alloc] init];
+            tweet.name = userdic[@"name"];
+            tweet.profileImageURL = userdic[@"profile_image_url"];
+            tweet.text = dic[@"text"];
+            [resultsArray addObject:tweet];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self setupTableViewWithData:resultsArray];
+            [self.tableView reloadData];
+        });
+    });
+}
+
 - (void)setupTableViewWithData:(NSArray *)dataArray {
-    TableViewCellConfigureBlock configureCell = ^(UITableViewCell *cell, NSDictionary *dic) {
-        NSDictionary *diction = (NSDictionary *)dic;
-        cell.textLabel.textColor = [UIColor blackColor];
-        cell.detailTextLabel.textColor = [UIColor blackColor];
-        NSDictionary *userdic = diction[@"user"];
-        [cell.textLabel setText:userdic[@"name"]];
-        [cell.detailTextLabel setText:diction[@"text"]];
+    TableViewCellConfigureBlock configureCell = ^(TweetsResultCell *cell, id tweet) {
+        
+        cell.textFont = [UIFont YSSystemFontOfSize:14.0f];
+        cell.textColor = [UIColor colorWithDesignIndex:2];
+        cell.timeStampFont = [UIFont YSSystemFontOfSize:12.0f];
+        cell.timeStampColor = [UIColor colorWithDesignIndex:3];
+        cell.nameFont = [UIFont YSBoldSystemFontOfSize:14.0f];
+        cell.nameColor = [UIColor colorWithDesignIndex:34];
+        cell.textPaddingLeft = 50.0f;
+        cell.textPaddingTop = 12.0f;
+        cell.underlined = NO;
+        [cell setModel:(Tweet *)tweet];
     };
     self.tweetsArrayDataSource = [[ArrayDataSource alloc] initWithItem:dataArray cellIdentifier:TweetsCellIdentifier configuerCellBlock:configureCell];
     self.tableView.dataSource = self.tweetsArrayDataSource;
-    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:TweetsCellIdentifier];
+    [self.tableView registerClass:[TweetsResultCell class] forCellReuseIdentifier:TweetsCellIdentifier];
 }
 
 - (void)getTweets {
     
     [[UWBEAppDelegate sharedDelegate].twitterAPI searchTweetsWithQuery:self.query geocode:self.locationString complete:^(NSArray *array, NSDictionary *searchMetaData) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self setupTableViewWithData:array];
-            [self.tableView reloadData];
-        });
+        if (array && [array count]>0) {
+            [self generateModelData:array];
+        }
     }];
 }
 
@@ -79,6 +108,29 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
     
     NSLog(@"text is %@",cell.textLabel.text);
     NSLog(@"detailText is %@",cell.detailTextLabel.text);
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row < [self.tweetsArrayDataSource itemCount]) {
+        Tweet *tweet = (Tweet *)[self.tweetsArrayDataSource itemAtIndexPath:indexPath];
+        if (tweet.desiredHeight != 0) {
+            return ceil(tweet.desiredHeight);
+        }
+        
+        UIFont *font = [UIFont YSBoldSystemFontOfSize:14.0f];
+        CGFloat rowWidth = 320-50-10;
+        CGFloat rowHeight = [NSString measureFrameHeightForText:tweet.text font:font constrainedToWidth:rowWidth].height;
+        tweet.contentHeight = rowHeight;
+        
+        CGFloat nameHeight = [NSString measureFrameHeightForText:tweet.name font:font constrainedToWidth:rowWidth].height - 6;// minus 6 to compenate the single line
+        tweet.nameHeight = nameHeight;
+        rowHeight += (TableViewCellAdjustBottomHeight + nameHeight);
+        
+        tweet.desiredHeight = rowHeight;
+        
+        return ceil(tweet.desiredHeight);
+    }
+    return DEFAULT_CELL_HEIGHT;
 }
 
 /*
