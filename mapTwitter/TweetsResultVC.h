@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWTableViewCell.h"
 
-@interface TweetsResultVC : UITableViewController
+@interface TweetsResultVC : UITableViewController <SWTableViewCellDelegate>
 
 @property (nonatomic, copy) NSString *query;
 @property (nonatomic, copy) NSString *locationString;

@@ -66,7 +66,6 @@
         _textPaddingTop = 12.0f;
         _underlined = NO;
         
-        
     }
     return self;
 }

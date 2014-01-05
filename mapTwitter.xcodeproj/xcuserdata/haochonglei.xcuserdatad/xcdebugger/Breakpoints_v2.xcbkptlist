@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mapTwitter/TweetsResultVC.m"
-            timestampString = "410574365.130135"
+            timestampString = "410579927.401945"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "5">
             <Locations>
@@ -80,11 +80,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mapTwitter/YSMTCell.m"
-            timestampString = "410548199.505816"
+            timestampString = "410579927.401945"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "-drawInContext:bounds:text:attibute:"
             landmarkType = "5">
             <Locations>
@@ -126,11 +126,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mapTwitter/YSMTCell.m"
-            timestampString = "410548199.505816"
+            timestampString = "410579927.401945"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "-drawInContext:bounds:text:attibute:"
             landmarkType = "5">
          </BreakpointContent>
@@ -142,11 +142,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mapTwitter/YSMTCell.m"
-            timestampString = "410547268.31121"
+            timestampString = "410579927.401945"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-drawLabelInContext:bounds:text:attibute:"
             landmarkType = "5">
          </BreakpointContent>
