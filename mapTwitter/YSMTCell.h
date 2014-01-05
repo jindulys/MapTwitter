@@ -10,8 +10,9 @@
 #import "NSString+Additions.h"
 #import <QuartzCore/QuartzCore.h>
 #import <CoreText/CoreText.h>
+#import "SWTableViewCell.h"
 
-@interface YSMTCell : UITableViewCell
+@interface YSMTCell : SWTableViewCell
 
 @property (nonatomic, strong) id info;
 

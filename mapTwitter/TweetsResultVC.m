@@ -99,6 +99,11 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
 
 - (void)setupTableViewWithData:(NSArray *)dataArray {
     TableViewCellConfigureBlock configureCell = ^(TweetsResultCell *cell, id tweet) {
+        Tweet *t = tweet;
+        [cell setCellHeight:t.desiredHeight];
+        cell.containingTableView = self.tableView;
+        cell.rightUtilityButtons = [self rightButtons];
+        cell.delegate = self;
         
         cell.textFont = [UIFont YSSystemFontOfSize:14.0f];
         cell.textColor = [UIColor colorWithDesignIndex:2];
@@ -155,6 +160,40 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
     }
     return DEFAULT_CELL_HEIGHT;
 }
+
+- (NSArray *)rightButtons
+{
+    NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0]
+                                                title:@"Save"];
+    
+    return rightUtilityButtons;
+}
+
+#pragma mark - SWTableViewDelegate
+
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+    switch (index) {
+        case 0:
+        {
+            NSLog(@"More button was pressed");
+            UIAlertView *alertTest = [[UIAlertView alloc] initWithTitle:@"Hello" message:@"More more more" delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles: nil];
+            [alertTest show];
+            
+            [cell hideUtilityButtonsAnimated:YES];
+            break;
+        }
+        
+        default:
+            break;
+    }
+}
+
+- (BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell {
+    return YES;
+}
+
 
 /*
 // Override to support conditional editing of the table view.

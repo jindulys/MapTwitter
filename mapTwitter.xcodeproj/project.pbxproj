@@ -30,6 +30,12 @@
 		8A7341571878DCF300A7A5FD /* SearchInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7341561878DCF300A7A5FD /* SearchInfo.m */; };
 		8A73415A1878E08800A7A5FD /* SearchInfo+create.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7341591878E08800A7A5FD /* SearchInfo+create.m */; };
 		8A73415D1878E0A600A7A5FD /* ResultTweet+create.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A73415C1878E0A600A7A5FD /* ResultTweet+create.m */; };
+		8A73416C1878F13400A7A5FD /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7341611878F13400A7A5FD /* NSMutableArray+SWUtilityButtons.m */; };
+		8A73416D1878F13400A7A5FD /* SWCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7341631878F13400A7A5FD /* SWCellScrollView.m */; };
+		8A73416E1878F13400A7A5FD /* SWLongPressGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7341651878F13400A7A5FD /* SWLongPressGestureRecognizer.m */; };
+		8A73416F1878F13400A7A5FD /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7341671878F13400A7A5FD /* SWTableViewCell.m */; };
+		8A7341701878F13400A7A5FD /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7341691878F13400A7A5FD /* SWUtilityButtonTapGestureRecognizer.m */; };
+		8A7341711878F13400A7A5FD /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A73416B1878F13400A7A5FD /* SWUtilityButtonView.m */; };
 		8A887EB118735C55005C9BAF /* SearchPostView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A887EB018735C55005C9BAF /* SearchPostView.m */; };
 		8A9C9D9218722F1E00429611 /* IOS7CorrectedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C9D9118722F1E00429611 /* IOS7CorrectedTextView.m */; };
 		8AA4F7D61870CC26009150EE /* searchMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4F7D51870CC26009150EE /* searchMapVC.m */; };
@@ -146,6 +152,19 @@
 		8A7341591878E08800A7A5FD /* SearchInfo+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SearchInfo+create.m"; path = "../SearchInfo+create.m"; sourceTree = "<group>"; };
 		8A73415B1878E0A600A7A5FD /* ResultTweet+create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ResultTweet+create.h"; sourceTree = "<group>"; };
 		8A73415C1878E0A600A7A5FD /* ResultTweet+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ResultTweet+create.m"; sourceTree = "<group>"; };
+		8A73415F1878F13400A7A5FD /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		8A7341601878F13400A7A5FD /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
+		8A7341611878F13400A7A5FD /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
+		8A7341621878F13400A7A5FD /* SWCellScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCellScrollView.h; sourceTree = "<group>"; };
+		8A7341631878F13400A7A5FD /* SWCellScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCellScrollView.m; sourceTree = "<group>"; };
+		8A7341641878F13400A7A5FD /* SWLongPressGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWLongPressGestureRecognizer.h; sourceTree = "<group>"; };
+		8A7341651878F13400A7A5FD /* SWLongPressGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWLongPressGestureRecognizer.m; sourceTree = "<group>"; };
+		8A7341661878F13400A7A5FD /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
+		8A7341671878F13400A7A5FD /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
+		8A7341681878F13400A7A5FD /* SWUtilityButtonTapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonTapGestureRecognizer.h; sourceTree = "<group>"; };
+		8A7341691878F13400A7A5FD /* SWUtilityButtonTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonTapGestureRecognizer.m; sourceTree = "<group>"; };
+		8A73416A1878F13400A7A5FD /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonView.h; sourceTree = "<group>"; };
+		8A73416B1878F13400A7A5FD /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonView.m; sourceTree = "<group>"; };
 		8A887EAF18735C55005C9BAF /* SearchPostView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPostView.h; sourceTree = "<group>"; };
 		8A887EB018735C55005C9BAF /* SearchPostView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPostView.m; sourceTree = "<group>"; };
 		8A9C9D9018722F1E00429611 /* IOS7CorrectedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOS7CorrectedTextView.h; sourceTree = "<group>"; };
@@ -306,6 +325,27 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		8A73415E1878F13400A7A5FD /* SWCell */ = {
+			isa = PBXGroup;
+			children = (
+				8A73415F1878F13400A7A5FD /* Constants.h */,
+				8A7341601878F13400A7A5FD /* NSMutableArray+SWUtilityButtons.h */,
+				8A7341611878F13400A7A5FD /* NSMutableArray+SWUtilityButtons.m */,
+				8A7341621878F13400A7A5FD /* SWCellScrollView.h */,
+				8A7341631878F13400A7A5FD /* SWCellScrollView.m */,
+				8A7341641878F13400A7A5FD /* SWLongPressGestureRecognizer.h */,
+				8A7341651878F13400A7A5FD /* SWLongPressGestureRecognizer.m */,
+				8A7341661878F13400A7A5FD /* SWTableViewCell.h */,
+				8A7341671878F13400A7A5FD /* SWTableViewCell.m */,
+				8A7341681878F13400A7A5FD /* SWUtilityButtonTapGestureRecognizer.h */,
+				8A7341691878F13400A7A5FD /* SWUtilityButtonTapGestureRecognizer.m */,
+				8A73416A1878F13400A7A5FD /* SWUtilityButtonView.h */,
+				8A73416B1878F13400A7A5FD /* SWUtilityButtonView.m */,
+			);
+			name = SWCell;
+			path = PodFiles;
+			sourceTree = "<group>";
+		};
 		8AA4F7D21870CBEB009150EE /* SearchHistory */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +388,7 @@
 		8AA4F80118710DD0009150EE /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				8A73415E1878F13400A7A5FD /* SWCell */,
 				8A64081F1877B50E0029E101 /* SDWebImage */,
 				8AA4F80218710E0C009150EE /* STTwitter */,
 			);
@@ -673,6 +714,8 @@
 				8AAA142118789F2200C23FBA /* SearchHistoryCell.m in Sources */,
 				8A64081718779E630029E101 /* UIColor+Additions.m in Sources */,
 				8A64083D1877B50E0029E101 /* UIButton+WebCache.m in Sources */,
+				8A7341711878F13400A7A5FD /* SWUtilityButtonView.m in Sources */,
+				8A73416F1878F13400A7A5FD /* SWTableViewCell.m in Sources */,
 				8AA4F82018710E0C009150EE /* STTwitterAppOnly.m in Sources */,
 				8ABF8024186F9135005160B8 /* SearchHistoryVC.m in Sources */,
 				8A25AE83187764520032E51D /* UIFont+Additions.m in Sources */,
@@ -685,18 +728,22 @@
 				8A6408361877B50E0029E101 /* SDImageCache.m in Sources */,
 				8AAA14271878AAB600C23FBA /* FetchResultsControllerDataSource.m in Sources */,
 				8A6408351877B50E0029E101 /* MKAnnotationView+WebCache.m in Sources */,
+				8A73416D1878F13400A7A5FD /* SWCellScrollView.m in Sources */,
 				8A64083B1877B50E0029E101 /* SDWebImageManager.m in Sources */,
 				8A9C9D9218722F1E00429611 /* IOS7CorrectedTextView.m in Sources */,
 				8A64081418779A450029E101 /* YSMTCell.m in Sources */,
 				8AA4F81C18710E0C009150EE /* NSDateFormatter+STTwitter.m in Sources */,
 				8AA4F82518710E0C009150EE /* JSONSyntaxHighlight.m in Sources */,
 				8A6408391877B50E0029E101 /* SDWebImageDownloader.m in Sources */,
+				8A73416C1878F13400A7A5FD /* NSMutableArray+SWUtilityButtons.m in Sources */,
 				8AE2E75C1876167E0021DB3F /* TweetsResultCell.m in Sources */,
 				8AE2E76318763ECD0021DB3F /* ArrayDataSource.m in Sources */,
+				8A73416E1878F13400A7A5FD /* SWLongPressGestureRecognizer.m in Sources */,
 				8ABF8028186F92F2005160B8 /* MTStyles.m in Sources */,
 				8A6408381877B50E0029E101 /* SDWebImageDecoder.m in Sources */,
 				8A6408371877B50E0029E101 /* SDWebImageCompat.m in Sources */,
 				8AA4F7D61870CC26009150EE /* searchMapVC.m in Sources */,
+				8A7341701878F13400A7A5FD /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				8ABF8003186F8A04005160B8 /* UWBEAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
