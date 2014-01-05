@@ -11,6 +11,7 @@
 #import "MTGoogleMapAPIKey.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "TwitterAPI.h"
+#import "PersistentStack.h"
 
 @implementation UWBEAppDelegate
 
@@ -28,7 +29,7 @@
 {
     CGRect bounds = [[UIScreen mainScreen] bounds];
     self.window = [[UIWindow alloc] initWithFrame:bounds];
-
+    
     self.window.backgroundColor = [UIColor whiteColor];
     SearchHistoryVC *searchHVC = [[SearchHistoryVC alloc] init];
     UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:searchHVC];
@@ -40,7 +41,19 @@
     if (!_twitterAPI) {
         self.twitterAPI;
     }
+    
+    self.persistentStack = [[PersistentStack alloc] initWithStoreURL:self.storeURL modelURL:self.modelURL];
+    
     return YES;
+}
+
+- (NSURL *)storeURL {
+    NSURL *documentsDirectory = [[NSFileManager defaultManager] URLForDirectory:NSDocumentationDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:NULL];
+    return [documentsDirectory URLByAppendingPathComponent:@"db.sqlite"];
+}
+
+- (NSURL *)modelURL {
+    return [[NSBundle mainBundle] URLForResource:@"MTSearchTweets" withExtension:@"momd"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -53,6 +66,7 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [self.persistentStack.managedObjectContext save:NULL];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

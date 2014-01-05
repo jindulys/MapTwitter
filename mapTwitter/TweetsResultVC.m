@@ -14,7 +14,9 @@
 #import "Tweet.h"
 #import "UIFont+Additions.h"
 #import "NSString+Additions.h"
-
+#import "SearchInfo.h"
+#import "SearchInfo+create.h"
+#import "PersistentStack.h"
 
 #define TableViewCellAdjustBottomHeight (12 + 5 + 8)
 #define DEFAULT_CELL_HEIGHT 44
@@ -24,6 +26,9 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
 @interface TweetsResultVC ()
 
 @property (nonatomic, strong) ArrayDataSource *tweetsArrayDataSource;
+@property (nonatomic) BOOL didSaveTweets;
+@property (nonatomic, strong) SearchInfo *searchInfo;
+@property (nonatomic, strong) NSManagedObjectContext *context;
 
 @end
 
@@ -42,6 +47,7 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
 {
     [super viewDidLoad];
     self.navigationItem.title = @"Tweets";
+    [self buildSearchInfoObject];
     [self getTweets];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -50,10 +56,27 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if (!self.didSaveTweets) {
+        [self.context deleteObject:self.searchInfo];
+    }
+    [self.context save:NULL];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - CoreData Method
+
+- (void)buildSearchInfoObject {
+    
+    self.context = [UWBEAppDelegate sharedDelegate].persistentStack.managedObjectContext;
+    NSDate *date = [NSDate date];
+    self.searchInfo = [SearchInfo insertSearchInfoWithLocation:self.searchLocStr searchTitle:self.query searchTime:date inManagedObjectContext:self.context];
 }
 
 - (void)generateModelData:(NSArray *)array {

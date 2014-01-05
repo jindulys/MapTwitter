@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchHistoryVC : UIViewController
+@interface SearchHistoryVC : UITableViewController
 
 @end

@@ -27,6 +27,9 @@
 		8A64083E1877B50E0029E101 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6408341877B50E0029E101 /* UIImageView+WebCache.m */; };
 		8A71EE59187524A4006D2B5C /* note-reply-field.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A71EE57187524A4006D2B5C /* note-reply-field.png */; };
 		8A71EE5A187524A4006D2B5C /* note-reply-field@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A71EE58187524A4006D2B5C /* note-reply-field@2x.png */; };
+		8A7341571878DCF300A7A5FD /* SearchInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7341561878DCF300A7A5FD /* SearchInfo.m */; };
+		8A73415A1878E08800A7A5FD /* SearchInfo+create.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7341591878E08800A7A5FD /* SearchInfo+create.m */; };
+		8A73415D1878E0A600A7A5FD /* ResultTweet+create.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A73415C1878E0A600A7A5FD /* ResultTweet+create.m */; };
 		8A887EB118735C55005C9BAF /* SearchPostView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A887EB018735C55005C9BAF /* SearchPostView.m */; };
 		8A9C9D9218722F1E00429611 /* IOS7CorrectedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C9D9118722F1E00429611 /* IOS7CorrectedTextView.m */; };
 		8AA4F7D61870CC26009150EE /* searchMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4F7D51870CC26009150EE /* searchMapVC.m */; };
@@ -62,6 +65,11 @@
 		8AA4F82518710E0C009150EE /* JSONSyntaxHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4F81918710E0C009150EE /* JSONSyntaxHighlight.m */; };
 		8AA4F82618710E0C009150EE /* STHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4F81B18710E0C009150EE /* STHTTPRequest.m */; };
 		8AA4F82818710E29009150EE /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4F82718710E29009150EE /* Twitter.framework */; };
+		8AAA141218789ACD00C23FBA /* MTSearchTweets.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8AAA141018789ACD00C23FBA /* MTSearchTweets.xcdatamodeld */; };
+		8AAA141B18789D5C00C23FBA /* ResultTweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAA141A18789D5C00C23FBA /* ResultTweet.m */; };
+		8AAA142118789F2200C23FBA /* SearchHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAA142018789F2200C23FBA /* SearchHistoryCell.m */; };
+		8AAA142418789FEB00C23FBA /* PersistentStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAA142318789FEB00C23FBA /* PersistentStack.m */; };
+		8AAA14271878AAB600C23FBA /* FetchResultsControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAA14261878AAB600C23FBA /* FetchResultsControllerDataSource.m */; };
 		8ABF7FF3186F8A04005160B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABF7FF2186F8A04005160B8 /* Foundation.framework */; };
 		8ABF7FF5186F8A04005160B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABF7FF4186F8A04005160B8 /* CoreGraphics.framework */; };
 		8ABF7FF7186F8A04005160B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ABF7FF6186F8A04005160B8 /* UIKit.framework */; };
@@ -132,6 +140,12 @@
 		8A6408341877B50E0029E101 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		8A71EE57187524A4006D2B5C /* note-reply-field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note-reply-field.png"; sourceTree = "<group>"; };
 		8A71EE58187524A4006D2B5C /* note-reply-field@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note-reply-field@2x.png"; sourceTree = "<group>"; };
+		8A7341551878DCF300A7A5FD /* SearchInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchInfo.h; sourceTree = "<group>"; };
+		8A7341561878DCF300A7A5FD /* SearchInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchInfo.m; sourceTree = "<group>"; };
+		8A7341581878E08800A7A5FD /* SearchInfo+create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SearchInfo+create.h"; path = "../SearchInfo+create.h"; sourceTree = "<group>"; };
+		8A7341591878E08800A7A5FD /* SearchInfo+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SearchInfo+create.m"; path = "../SearchInfo+create.m"; sourceTree = "<group>"; };
+		8A73415B1878E0A600A7A5FD /* ResultTweet+create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ResultTweet+create.h"; sourceTree = "<group>"; };
+		8A73415C1878E0A600A7A5FD /* ResultTweet+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ResultTweet+create.m"; sourceTree = "<group>"; };
 		8A887EAF18735C55005C9BAF /* SearchPostView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPostView.h; sourceTree = "<group>"; };
 		8A887EB018735C55005C9BAF /* SearchPostView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPostView.m; sourceTree = "<group>"; };
 		8A9C9D9018722F1E00429611 /* IOS7CorrectedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOS7CorrectedTextView.h; sourceTree = "<group>"; };
@@ -184,6 +198,15 @@
 		8AA4F81A18710E0C009150EE /* STHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHTTPRequest.h; sourceTree = "<group>"; };
 		8AA4F81B18710E0C009150EE /* STHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHTTPRequest.m; sourceTree = "<group>"; };
 		8AA4F82718710E29009150EE /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		8AAA141118789ACD00C23FBA /* MTSearchTweets.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MTSearchTweets.xcdatamodel; sourceTree = "<group>"; };
+		8AAA141918789D5C00C23FBA /* ResultTweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultTweet.h; sourceTree = "<group>"; };
+		8AAA141A18789D5C00C23FBA /* ResultTweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultTweet.m; sourceTree = "<group>"; };
+		8AAA141F18789F2200C23FBA /* SearchHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchHistoryCell.h; sourceTree = "<group>"; };
+		8AAA142018789F2200C23FBA /* SearchHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchHistoryCell.m; sourceTree = "<group>"; };
+		8AAA142218789FEB00C23FBA /* PersistentStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentStack.h; sourceTree = "<group>"; };
+		8AAA142318789FEB00C23FBA /* PersistentStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentStack.m; sourceTree = "<group>"; };
+		8AAA14251878AAB600C23FBA /* FetchResultsControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchResultsControllerDataSource.h; sourceTree = "<group>"; };
+		8AAA14261878AAB600C23FBA /* FetchResultsControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchResultsControllerDataSource.m; sourceTree = "<group>"; };
 		8ABF7FEF186F8A04005160B8 /* mapTwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapTwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ABF7FF2186F8A04005160B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8ABF7FF4186F8A04005160B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -288,6 +311,8 @@
 			children = (
 				8ABF8022186F9135005160B8 /* SearchHistoryVC.h */,
 				8ABF8023186F9135005160B8 /* SearchHistoryVC.m */,
+				8AAA141F18789F2200C23FBA /* SearchHistoryCell.h */,
+				8AAA142018789F2200C23FBA /* SearchHistoryCell.m */,
 			);
 			name = SearchHistory;
 			sourceTree = "<group>";
@@ -504,6 +529,19 @@
 				8AE2E76218763ECD0021DB3F /* ArrayDataSource.m */,
 				8A25AE7E18775B630032E51D /* Tweet.h */,
 				8A25AE7F18775B630032E51D /* Tweet.m */,
+				8AAA141918789D5C00C23FBA /* ResultTweet.h */,
+				8AAA141A18789D5C00C23FBA /* ResultTweet.m */,
+				8A73415B1878E0A600A7A5FD /* ResultTweet+create.h */,
+				8A73415C1878E0A600A7A5FD /* ResultTweet+create.m */,
+				8A7341551878DCF300A7A5FD /* SearchInfo.h */,
+				8A7341561878DCF300A7A5FD /* SearchInfo.m */,
+				8A7341581878E08800A7A5FD /* SearchInfo+create.h */,
+				8A7341591878E08800A7A5FD /* SearchInfo+create.m */,
+				8AAA142218789FEB00C23FBA /* PersistentStack.h */,
+				8AAA142318789FEB00C23FBA /* PersistentStack.m */,
+				8AAA14251878AAB600C23FBA /* FetchResultsControllerDataSource.h */,
+				8AAA14261878AAB600C23FBA /* FetchResultsControllerDataSource.m */,
+				8AAA141018789ACD00C23FBA /* MTSearchTweets.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -620,24 +658,32 @@
 				8A25AE861877689A0032E51D /* NSString+Additions.m in Sources */,
 				8AA4F81D18710E0C009150EE /* NSString+STTwitter.m in Sources */,
 				8AA4F81F18710E0C009150EE /* STTwitterAPI.m in Sources */,
+				8AAA141218789ACD00C23FBA /* MTSearchTweets.xcdatamodeld in Sources */,
 				8AA4F81E18710E0C009150EE /* STHTTPRequest+STTwitter.m in Sources */,
+				8A73415A1878E08800A7A5FD /* SearchInfo+create.m in Sources */,
 				8AA4F82418710E0C009150EE /* BAVPlistNode.m in Sources */,
 				8A64083A1877B50E0029E101 /* SDWebImageDownloaderOperation.m in Sources */,
 				8A64083C1877B50E0029E101 /* SDWebImagePrefetcher.m in Sources */,
 				8A64083E1877B50E0029E101 /* UIImageView+WebCache.m in Sources */,
 				8AE2E760187618450021DB3F /* TwitterAPI.m in Sources */,
+				8A73415D1878E0A600A7A5FD /* ResultTweet+create.m in Sources */,
 				8A25AE8018775B630032E51D /* Tweet.m in Sources */,
 				8ABF7FFF186F8A04005160B8 /* main.m in Sources */,
 				8A64081E1877AF390029E101 /* YSAsistance.m in Sources */,
+				8AAA142118789F2200C23FBA /* SearchHistoryCell.m in Sources */,
 				8A64081718779E630029E101 /* UIColor+Additions.m in Sources */,
 				8A64083D1877B50E0029E101 /* UIButton+WebCache.m in Sources */,
 				8AA4F82018710E0C009150EE /* STTwitterAppOnly.m in Sources */,
 				8ABF8024186F9135005160B8 /* SearchHistoryVC.m in Sources */,
 				8A25AE83187764520032E51D /* UIFont+Additions.m in Sources */,
 				8AA4F82218710E0C009150EE /* STTwitterOAuth.m in Sources */,
+				8AAA142418789FEB00C23FBA /* PersistentStack.m in Sources */,
+				8AAA141B18789D5C00C23FBA /* ResultTweet.m in Sources */,
+				8A7341571878DCF300A7A5FD /* SearchInfo.m in Sources */,
 				8AA4F82118710E0C009150EE /* STTwitterHTML.m in Sources */,
 				8AA4F82618710E0C009150EE /* STHTTPRequest.m in Sources */,
 				8A6408361877B50E0029E101 /* SDImageCache.m in Sources */,
+				8AAA14271878AAB600C23FBA /* FetchResultsControllerDataSource.m in Sources */,
 				8A6408351877B50E0029E101 /* MKAnnotationView+WebCache.m in Sources */,
 				8A64083B1877B50E0029E101 /* SDWebImageManager.m in Sources */,
 				8A9C9D9218722F1E00429611 /* IOS7CorrectedTextView.m in Sources */,
@@ -874,6 +920,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8AAA141018789ACD00C23FBA /* MTSearchTweets.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8AAA141118789ACD00C23FBA /* MTSearchTweets.xcdatamodel */,
+			);
+			currentVersion = 8AAA141118789ACD00C23FBA /* MTSearchTweets.xcdatamodel */;
+			path = MTSearchTweets.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8ABF7FE7186F8A04005160B8 /* Project object */;
 }

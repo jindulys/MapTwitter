@@ -12,5 +12,6 @@
 
 @property (nonatomic, copy) NSString *query;
 @property (nonatomic, copy) NSString *locationString;
+@property (nonatomic, copy) NSString *searchLocStr;
 
 @end

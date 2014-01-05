@@ -29,6 +29,7 @@
 @property (nonatomic) BOOL isFinishedShowCurrentLocation;
 
 @property (nonatomic, strong) SearchPostView *searchPostView;
+@property (nonatomic, copy) NSString *searchLocStr;
 
 @end
 
@@ -191,6 +192,7 @@
     TweetsResultVC *vc = [[TweetsResultVC alloc] init];
     vc.query = [self.searchPostView text];
     vc.locationString = [self locationString];
+    vc.searchLocStr = self.searchLocStr;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -202,12 +204,14 @@
 - (void)mapView:(GMSMapView *)mapView didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate
 {
     __weak GMSMapView *wmapView = _mapView;
+    __weak searchMapVC *wself = self;
     GMSReverseGeocodeCallback handler = ^(GMSReverseGeocodeResponse *response, NSError *error) {
         GMSMapView *smapView = wmapView;
         if (response && response.firstResult) {
             GMSMarker *marker = [[GMSMarker alloc] init];
             marker.position = coordinate;
             marker.title = response.firstResult.addressLine1;
+            wself.searchLocStr = marker.title;
             marker.snippet = response.firstResult.addressLine2;
             marker.appearAnimation = kGMSMarkerAnimationPop;
             [smapView clear];
