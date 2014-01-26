@@ -25,4 +25,19 @@
     return @"SearchInfo";
 }
 
++ (NSFetchedResultsController *)AllSearchInfoFetchedResultsControllerWithContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:self.entityName];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"searchTime" ascending:NO];
+    [request setSortDescriptors:@[sortDescriptor]];
+    return [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+}
+
+- (NSString *)constructText {
+    return self.searchTitle;
+}
+
+- (NSString *)constructTweetNum {
+    return [NSString stringWithFormat:@"total num:%lu",(self.tweets.count)];
+}
+
 @end

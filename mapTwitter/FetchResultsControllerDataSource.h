@@ -25,5 +25,7 @@
 
 - (id)initWithTableView:(UITableView *)tableView;
 - (id)selectedItem;
+- (NSInteger)itemCount;
+- (void)refreshData;
 
 @end

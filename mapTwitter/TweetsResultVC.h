@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "SWTableViewCell.h"
 
+@class SearchInfo;
+
 @interface TweetsResultVC : UITableViewController <SWTableViewCellDelegate>
 
 @property (nonatomic, copy) NSString *query;
 @property (nonatomic, copy) NSString *locationString;
 @property (nonatomic, copy) NSString *searchLocStr;
+
+- (id)initWithSearchInfo:(SearchInfo *)searchInfo;
 
 @end

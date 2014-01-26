@@ -74,7 +74,6 @@
 }
 
 - (void)setFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController {
-    NSAssert(fetchedResultsController == nil, @"you can currently only assign this property once");
     _fetchedResultsController = fetchedResultsController;
     fetchedResultsController.delegate = self;
     [fetchedResultsController performFetch:NULL];
@@ -94,6 +93,10 @@
         [self.fetchedResultsController performFetch:NULL];
         [self.tableView reloadData];
     }
+}
+
+- (void)refreshData {
+    [self.fetchedResultsController performFetch:NULL];
 }
 
 @end

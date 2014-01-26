@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSString * location;
 @property (nonatomic, retain) NSDate * searchTime;
 @property (nonatomic, retain) NSString * searchTitle;
+@property (nonatomic, retain) NSNumber * desiredHeight;
 @property (nonatomic, retain) NSSet *tweets;
 @end
 

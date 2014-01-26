@@ -15,6 +15,7 @@
 @dynamic location;
 @dynamic searchTime;
 @dynamic searchTitle;
+@dynamic desiredHeight;
 @dynamic tweets;
 
 @end

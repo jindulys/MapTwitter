@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWTableViewCell.h"
 
-@interface SearchHistoryVC : UITableViewController
+@interface SearchHistoryVC : UITableViewController <SWTableViewCellDelegate>
 
 @end

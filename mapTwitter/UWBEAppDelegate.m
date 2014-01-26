@@ -29,8 +29,10 @@
 {
     CGRect bounds = [[UIScreen mainScreen] bounds];
     self.window = [[UIWindow alloc] initWithFrame:bounds];
-    
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    self.persistentStack = [[PersistentStack alloc] initWithStoreURL:self.storeURL modelURL:self.modelURL];
+    
     SearchHistoryVC *searchHVC = [[SearchHistoryVC alloc] init];
     UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:searchHVC];
     nv.navigationBar.barStyle = UIBarStyleBlackTranslucent;
@@ -41,8 +43,6 @@
     if (!_twitterAPI) {
         self.twitterAPI;
     }
-    
-    self.persistentStack = [[PersistentStack alloc] initWithStoreURL:self.storeURL modelURL:self.modelURL];
     
     return YES;
 }

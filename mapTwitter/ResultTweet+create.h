@@ -16,4 +16,6 @@
                                      text:(NSString *)text
                                searchInfo:(SearchInfo *)searchInfo
                    inManagedObjectContext:(NSManagedObjectContext *)context;
+
+
 @end

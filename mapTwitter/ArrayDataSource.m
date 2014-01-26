@@ -38,6 +38,10 @@ configuerCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock {
     return self.items[(NSInteger) indexPath.row];
 }
 
+- (id)itemAtIndex:(NSInteger)index {
+    return self.items[index];
+}
+
 - (NSInteger)itemCount {
     return self.items.count;
 }

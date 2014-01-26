@@ -14,4 +14,11 @@
                                  searchTitle:(NSString *)searchTitle
                                   searchTime:(NSDate *)searchTime
                       inManagedObjectContext:(NSManagedObjectContext *)context;
+
++ (NSFetchedResultsController *)AllSearchInfoFetchedResultsControllerWithContext:(NSManagedObjectContext *)context;
+
+- (NSString *)constructText;
+
+- (NSString *)constructTweetNum;
+
 @end

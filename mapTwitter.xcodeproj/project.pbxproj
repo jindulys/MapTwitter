@@ -10,6 +10,7 @@
 		8A25AE8018775B630032E51D /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A25AE7F18775B630032E51D /* Tweet.m */; };
 		8A25AE83187764520032E51D /* UIFont+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A25AE82187764520032E51D /* UIFont+Additions.m */; };
 		8A25AE861877689A0032E51D /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A25AE851877689A0032E51D /* NSString+Additions.m */; };
+		8A5257CF18791DEF00F56992 /* SearchInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5257CE18791DEF00F56992 /* SearchInfo.m */; };
 		8A64081418779A450029E101 /* YSMTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A64081318779A450029E101 /* YSMTCell.m */; };
 		8A64081718779E630029E101 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A64081618779E630029E101 /* UIColor+Additions.m */; };
 		8A64081A1877AE930029E101 /* Fanben_Avatar_Placeholder_66.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A6408181877AE930029E101 /* Fanben_Avatar_Placeholder_66.png */; };
@@ -27,7 +28,6 @@
 		8A64083E1877B50E0029E101 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6408341877B50E0029E101 /* UIImageView+WebCache.m */; };
 		8A71EE59187524A4006D2B5C /* note-reply-field.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A71EE57187524A4006D2B5C /* note-reply-field.png */; };
 		8A71EE5A187524A4006D2B5C /* note-reply-field@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A71EE58187524A4006D2B5C /* note-reply-field@2x.png */; };
-		8A7341571878DCF300A7A5FD /* SearchInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7341561878DCF300A7A5FD /* SearchInfo.m */; };
 		8A73415A1878E08800A7A5FD /* SearchInfo+create.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7341591878E08800A7A5FD /* SearchInfo+create.m */; };
 		8A73415D1878E0A600A7A5FD /* ResultTweet+create.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A73415C1878E0A600A7A5FD /* ResultTweet+create.m */; };
 		8A73416C1878F13400A7A5FD /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7341611878F13400A7A5FD /* NSMutableArray+SWUtilityButtons.m */; };
@@ -115,6 +115,8 @@
 		8A25AE841877689A0032E51D /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		8A25AE851877689A0032E51D /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		8A25AE87187776330032E51D /* MTDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTDefine.h; path = ../MTDefine.h; sourceTree = "<group>"; };
+		8A5257CD18791DEF00F56992 /* SearchInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchInfo.h; sourceTree = "<group>"; };
+		8A5257CE18791DEF00F56992 /* SearchInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchInfo.m; sourceTree = "<group>"; };
 		8A64081218779A450029E101 /* YSMTCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSMTCell.h; sourceTree = "<group>"; };
 		8A64081318779A450029E101 /* YSMTCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSMTCell.m; sourceTree = "<group>"; };
 		8A64081518779E630029E101 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
@@ -146,8 +148,6 @@
 		8A6408341877B50E0029E101 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		8A71EE57187524A4006D2B5C /* note-reply-field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note-reply-field.png"; sourceTree = "<group>"; };
 		8A71EE58187524A4006D2B5C /* note-reply-field@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note-reply-field@2x.png"; sourceTree = "<group>"; };
-		8A7341551878DCF300A7A5FD /* SearchInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchInfo.h; sourceTree = "<group>"; };
-		8A7341561878DCF300A7A5FD /* SearchInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchInfo.m; sourceTree = "<group>"; };
 		8A7341581878E08800A7A5FD /* SearchInfo+create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SearchInfo+create.h"; path = "../SearchInfo+create.h"; sourceTree = "<group>"; };
 		8A7341591878E08800A7A5FD /* SearchInfo+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SearchInfo+create.m"; path = "../SearchInfo+create.m"; sourceTree = "<group>"; };
 		8A73415B1878E0A600A7A5FD /* ResultTweet+create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ResultTweet+create.h"; sourceTree = "<group>"; };
@@ -574,8 +574,6 @@
 				8AAA141A18789D5C00C23FBA /* ResultTweet.m */,
 				8A73415B1878E0A600A7A5FD /* ResultTweet+create.h */,
 				8A73415C1878E0A600A7A5FD /* ResultTweet+create.m */,
-				8A7341551878DCF300A7A5FD /* SearchInfo.h */,
-				8A7341561878DCF300A7A5FD /* SearchInfo.m */,
 				8A7341581878E08800A7A5FD /* SearchInfo+create.h */,
 				8A7341591878E08800A7A5FD /* SearchInfo+create.m */,
 				8AAA142218789FEB00C23FBA /* PersistentStack.h */,
@@ -583,6 +581,8 @@
 				8AAA14251878AAB600C23FBA /* FetchResultsControllerDataSource.h */,
 				8AAA14261878AAB600C23FBA /* FetchResultsControllerDataSource.m */,
 				8AAA141018789ACD00C23FBA /* MTSearchTweets.xcdatamodeld */,
+				8A5257CD18791DEF00F56992 /* SearchInfo.h */,
+				8A5257CE18791DEF00F56992 /* SearchInfo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -694,6 +694,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AE2E7591876164B0021DB3F /* TweetsResultVC.m in Sources */,
+				8A5257CF18791DEF00F56992 /* SearchInfo.m in Sources */,
 				8A887EB118735C55005C9BAF /* SearchPostView.m in Sources */,
 				8AA4F82318710E0C009150EE /* STTwitterOS.m in Sources */,
 				8A25AE861877689A0032E51D /* NSString+Additions.m in Sources */,
@@ -722,7 +723,6 @@
 				8AA4F82218710E0C009150EE /* STTwitterOAuth.m in Sources */,
 				8AAA142418789FEB00C23FBA /* PersistentStack.m in Sources */,
 				8AAA141B18789D5C00C23FBA /* ResultTweet.m in Sources */,
-				8A7341571878DCF300A7A5FD /* SearchInfo.m in Sources */,
 				8AA4F82118710E0C009150EE /* STTwitterHTML.m in Sources */,
 				8AA4F82618710E0C009150EE /* STHTTPRequest.m in Sources */,
 				8A6408361877B50E0029E101 /* SDImageCache.m in Sources */,

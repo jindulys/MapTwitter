@@ -17,6 +17,7 @@
 #import "SearchInfo.h"
 #import "SearchInfo+create.h"
 #import "PersistentStack.h"
+#import "ResultTweet+create.h"
 
 #define TableViewCellAdjustBottomHeight (12 + 5 + 8)
 #define DEFAULT_CELL_HEIGHT 44
@@ -30,6 +31,10 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
 @property (nonatomic, strong) SearchInfo *searchInfo;
 @property (nonatomic, strong) NSManagedObjectContext *context;
 
+@property (nonatomic, strong) NSURLSession *session;
+// If we are in the searchInfoResult Mode.
+@property (nonatomic) BOOL isSearchInfoResults;
+
 @end
 
 @implementation TweetsResultVC
@@ -39,6 +44,19 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        
+        _session = [NSURLSession sessionWithConfiguration:config];
+    }
+    return self;
+}
+
+- (id)initWithSearchInfo:(SearchInfo *)searchInfo {
+    self = [self initWithStyle:UITableViewStylePlain];
+    if (self) {
+        //set the searchInfoResult Mode.
+        self.searchInfo = searchInfo;
+        self.isSearchInfoResults = YES;
     }
     return self;
 }
@@ -47,13 +65,13 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
 {
     [super viewDidLoad];
     self.navigationItem.title = @"Tweets";
-    [self buildSearchInfoObject];
-    [self getTweets];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    if (!self.isSearchInfoResults) {
+        [self buildSearchInfoObject];
+        [self getTweets];
+    } else {
+        [self generateModelDataFromSearchInfo];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -70,7 +88,7 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - CoreData Method
+#pragma mark - Normal Twitter Request Mode.
 
 - (void)buildSearchInfoObject {
     
@@ -79,9 +97,19 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
     self.searchInfo = [SearchInfo insertSearchInfoWithLocation:self.searchLocStr searchTitle:self.query searchTime:date inManagedObjectContext:self.context];
 }
 
+- (void)getTweets {
+    [[UWBEAppDelegate sharedDelegate].twitterAPI searchTweetsWithQuery:self.query geocode:self.locationString complete:^(NSArray *array, NSDictionary *searchMetaData) {
+        if (array && [array count]>0) {
+            [self generateModelData:array];
+        }
+    }];
+}
+
 - (void)generateModelData:(NSArray *)array {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSMutableArray *resultsArray = [[NSMutableArray alloc] init];
+        // Test:
+        NSMutableArray *tweetsTextArray = [[NSMutableArray alloc] init];
         for (NSDictionary *dic in array) {
             NSDictionary *userdic = dic[@"user"];
             Tweet *tweet = [[Tweet alloc] init];
@@ -89,12 +117,93 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
             tweet.profileImageURL = userdic[@"profile_image_url"];
             tweet.text = dic[@"text"];
             [resultsArray addObject:tweet];
+            [tweetsTextArray addObject:tweet];
         }
+        [self postTweetsToRemoteServer:tweetsTextArray];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setupTableViewWithData:resultsArray];
             [self.tableView reloadData];
         });
     });
+}
+
+# pragma mark - post to remote server
+
+- (void)postTweetsToRemoteServer:(NSMutableArray *)tweetsArray {
+    NSMutableString *requestStr = [[NSMutableString alloc] init];
+    
+    static NSString *seperator = @"!/-_";
+//    for (Tweet *tweet in tweetsArray) {
+//        [requestStr appendFormat:@"%@%@",tweet.text,seperator];
+//    }
+    Tweet *tweet = [tweetsArray lastObject];
+    [requestStr appendFormat:@"%@%@",tweet.text,seperator];
+    NSString *finalStr;
+    if (requestStr.length > 0) {
+        finalStr = [requestStr substringToIndex:[requestStr length]-4];
+    }
+    
+    NSString *remoteURL = [NSString stringWithFormat:@"http://map-twitter.appspot.com/process?data=%@",finalStr];
+    NSURL *url = [NSURL URLWithString:remoteURL];
+    [[_session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (!error) {
+            NSHTTPURLResponse *httpResp = (NSHTTPURLResponse *)response;
+            if (httpResp.statusCode == 200) {
+                NSError *jsonError;
+                NSArray *tweetsJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+                NSMutableArray *returnTweets = [[NSMutableArray alloc] init];
+                
+                if (!jsonError) {
+                    for (NSDictionary *TweetsMetadata in
+                         tweetsJSON) {
+                    }
+                }
+            }
+        }
+    }] resume];
+}
+
+# pragma mark - searchInfo Mode
+
+- (void)generateModelDataFromSearchInfo {
+    NSSet *tweetSet = self.searchInfo.tweets;
+    NSMutableArray *tweetArray = [NSMutableArray arrayWithArray:[tweetSet allObjects]];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+    [tweetArray sortUsingDescriptors:@[sortDescriptor]];
+    
+    NSMutableArray *results = [[NSMutableArray alloc] init];
+    [tweetArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        Tweet *tweet = [self createTweetWithResultTweet:obj];
+        [results addObject:tweet];
+    }];
+    [self setupTableViewWithData:(NSArray *)results];
+}
+
+- (Tweet *)createTweetWithResultTweet:(id)obj {
+    ResultTweet *result = obj;
+    Tweet *tweet = [[Tweet alloc] init];
+    tweet.name = result.name;
+    tweet.profileImageURL = result.profileURL;
+    tweet.text = result.text;
+    return tweet;
+}
+
+# pragma mark - common private methods
+
+- (NSArray *)rightButtons
+{
+    NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+    if (self.isSearchInfoResults) {
+        [rightUtilityButtons sw_addUtilityButtonWithColor:
+         [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0]
+                                                    title:@"Delete"];
+    } else {
+        [rightUtilityButtons sw_addUtilityButtonWithColor:
+         [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0]
+                                                    title:@"Save"];
+    }
+    return rightUtilityButtons;
 }
 
 - (void)setupTableViewWithData:(NSArray *)dataArray {
@@ -121,14 +230,7 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
     [self.tableView registerClass:[TweetsResultCell class] forCellReuseIdentifier:TweetsCellIdentifier];
 }
 
-- (void)getTweets {
-    
-    [[UWBEAppDelegate sharedDelegate].twitterAPI searchTweetsWithQuery:self.query geocode:self.locationString complete:^(NSArray *array, NSDictionary *searchMetaData) {
-        if (array && [array count]>0) {
-            [self generateModelData:array];
-        }
-    }];
-}
+# pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -161,15 +263,7 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
     return DEFAULT_CELL_HEIGHT;
 }
 
-- (NSArray *)rightButtons
-{
-    NSMutableArray *rightUtilityButtons = [NSMutableArray new];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0]
-                                                title:@"Save"];
-    
-    return rightUtilityButtons;
-}
+
 
 #pragma mark - SWTableViewDelegate
 
@@ -177,11 +271,12 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
     switch (index) {
         case 0:
         {
-            NSLog(@"More button was pressed");
-            UIAlertView *alertTest = [[UIAlertView alloc] initWithTitle:@"Hello" message:@"More more more" delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles: nil];
-            [alertTest show];
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+            Tweet *tweet = [self.tweetsArrayDataSource itemAtIndexPath:indexPath];
+            [ResultTweet insertResultTweetWithName:tweet.name profileURL:tweet.profileImageURL text:tweet.text searchInfo:self.searchInfo inManagedObjectContext:self.context];
             
             [cell hideUtilityButtonsAnimated:YES];
+            self.didSaveTweets = YES;
             break;
         }
         
@@ -193,57 +288,5 @@ static NSString *const TweetsCellIdentifier = @"TweetCell";
 - (BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell {
     return YES;
 }
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

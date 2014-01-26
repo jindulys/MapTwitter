@@ -17,6 +17,7 @@ typedef void (^TableViewCellConfigureBlock)(id cell, id item);
 configuerCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock;
 
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath;
+- (id)itemAtIndex:(NSInteger)index;
 
 - (NSInteger)itemCount;
 

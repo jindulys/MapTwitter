@@ -77,7 +77,11 @@
     
     self.info = info;
     
-    _rowHeight = [[info valueForKey:@"desiredHeight"] floatValue];
+    if ([[info valueForKey:@"desiredHeight"] floatValue]) {
+        _rowHeight = [[info valueForKey:@"desiredHeight"] floatValue];
+    }else {
+        _rowHeight = 80;
+    }
     
     [self refreshContents];
 }
