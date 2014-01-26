@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class TwitterAPI;
+@class PersistentStack;
+
 @interface UWBEAppDelegate : UIResponder <UIApplicationDelegate>
 
++ (instancetype)sharedDelegate;
+
 @property (strong, nonatomic) UIWindow *window;
+@property (readonly, strong, nonatomic) TwitterAPI *twitterAPI;
+@property (strong, nonatomic) PersistentStack *persistentStack;
 
 @end

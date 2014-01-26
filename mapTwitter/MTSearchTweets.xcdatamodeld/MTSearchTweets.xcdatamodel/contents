@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ResultTweet" representedClassName="ResultTweet" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="profileURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="searchInfo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="SearchInfo" inverseName="tweets" inverseEntity="SearchInfo" syncable="YES"/>
+    </entity>
+    <entity name="SearchInfo" representedClassName="SearchInfo" syncable="YES">
+        <attribute name="desiredHeight" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="searchTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="searchTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tweets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ResultTweet" inverseName="searchInfo" inverseEntity="ResultTweet" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ResultTweet" positionX="-83" positionY="219" width="128" height="118"/>
+        <element name="SearchInfo" positionX="160" positionY="180" width="128" height="118"/>
+    </elements>
+</model>
